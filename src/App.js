@@ -1,46 +1,27 @@
-// import React from 'react'
-import Header from "./components/Header";
-import Tasks from "./components/Tasks";
-import { useState } from 'react';
-// const name='Shahul'
-// const check=true
+import React from 'react'
+import Navbar from './Components/Navbar'
+import AddTask from './Components/AddTask'
+import { Col, Container, Row } from 'react-bootstrap'
+import TaskList from './Components/TaskList'
+// import Counter from './Redux/Counter'
 
-function App() {
-  const[tasks,taskFun]=useState([
-    {
-      id:1,
-      text:'Doctor"s Appointment',
-      day: 'jul7th',
-      reminder:true
-    },
-    {
-      id:2,
-      text:'Meeting at School',
-      day: 'jul7th',
-      reminder:true
-    },
-    {
-      id:3,
-      text:'For food',
-      day: 'jul7th',
-      reminder:true
-    }
-  ])
+const App = () => {
   return (
-    <div className="App">
-      {/* <h1>Learn React Course</h1> */}
-      {/* <h2>How is it {name} Do You Know This {check ? 'yes':'no'}</h2> */}
-    <Header/>
-    <Tasks tasks={tasks}/>
-    </div>
-  );
+    <Container>
+      <Navbar/>
+      <Row className="justify-content-md-center">
+        <Col lg="6">
+          <AddTask/>  
+        </Col>
+      </Row>
+      <Row className="justify-content-md-center">
+        <Col lg="6">
+          <TaskList/>
+        </Col>
+      </Row>
+      {/* <Counter/> */}
+    </Container>
+  )
 }
 
-// class App extends React.Component{
-//   render(){
-//     return <h1>Hello From A Class</h1>
-//   }
-// }
-
-
-export default App;
+export default App
