@@ -1,9 +1,0 @@
-[build]
-  command = "npm run build"
-  publish = "build"
-  functions = "functions"
-  # Copy the JSON file to the build directory
-  [[plugins]]
-    package = "@netlify/plugin-functions-install-core"
-    [plugins.inputs]
-      include = ["db.json"]
